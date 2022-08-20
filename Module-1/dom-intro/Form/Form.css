@@ -1,0 +1,48 @@
+body{
+    /* position: relative; */
+}
+
+.main{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    display: block;
+}
+
+#container{
+    border: 3px;
+    border-style:outset;
+    border-color: blue;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.sub-box{
+    margin: 8px;
+}
+
+
+#name{
+    display: block;
+}
+
+#desired-salary{
+    display: block;
+}
+
+#birthday{
+    display: block;
+}
+
+#phone{
+    display: block;
+}
+
+#submit{
+    position: relative;
+    /* margin: 10px; */
+    left: 0px;
+    bottom: 0px;
+
+}

@@ -1,0 +1,11 @@
+
+.box{
+    display: inline-block;
+    background-color: lightgrey;
+    border-color: black;
+    border: 1px;
+    line-height:20px;
+    text-align:middle;
+    width: 150px;
+    padding: 20px;
+  }

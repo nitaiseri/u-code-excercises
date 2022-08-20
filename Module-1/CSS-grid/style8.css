@@ -1,0 +1,33 @@
+body{
+    background-color: beige;
+}
+#search-container{
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+/* input{
+    display: inline-block;
+}
+.search-btn{
+    display: inline-block;
+    justify-content: center;
+
+} */
+
+#results-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.result{
+    display: grid;
+    height: 100px;
+    background-color: #16a085;
+    text-align: center;
+    align-content: center;
+    border-radius: 4px;
+}

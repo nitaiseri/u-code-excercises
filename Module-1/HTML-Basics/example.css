@@ -1,0 +1,28 @@
+#container {
+    background-color: grey;
+    box-shadow:2px 2px black;
+    display: inline-block;
+  }
+  
+  #first {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(75, 171, 139);
+    border: 2px solid black;
+    display: inline-block;
+  }
+  
+  #second {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(230, 110, 30);
+    border: 2px solid black;
+    display: inline-block;
+  }
+  
+  .button {
+    background-color: rgb(64, 174, 64);
+    border: 2px solid green;
+  }
+  
+  

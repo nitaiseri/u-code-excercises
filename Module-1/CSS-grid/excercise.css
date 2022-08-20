@@ -1,0 +1,106 @@
+body{
+    margin: 0px;
+}
+
+#chat-container{
+    display: grid;
+    grid-template-columns: 5fr 15fr;
+    grid-template-rows: 19fr 1fr;
+    height: 100vh;
+    grid-template-areas: 
+    "f m"
+    "f n";
+
+}
+
+#friends-list{
+    grid-area: f;
+    background-color: purple;
+    padding: 5%;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.friends-head{
+    display: grid;
+    font-size: 200%;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+.friend{
+    display: grid;
+    background-color: blueviolet;
+    align-content: center;
+    height: fit-content;
+    padding: 5%;
+    font-family: Verdana;
+    font-size: 150%;
+    
+}
+
+#messages-box{
+    display: grid;
+    grid-area: m;
+    background-color: gainsboro;
+    padding: 2%;
+    grid-template-rows: repeat(5, 1fr);
+    font-family: Papyrus;
+}
+
+.in-message{
+    display: grid;
+    justify-self: flex-start;
+    background-color: grey;
+    height: fit-content;
+    width: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1%;
+}
+
+.out-message{
+    display: grid;
+    justify-self: flex-end;
+    background-color: green;
+    height: fit-content;
+    width: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1%;
+}
+
+.message{
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.time{
+    display: grid;
+    justify-self: end;
+    align-self: flex-end;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+
+#new-message{
+    display: grid;
+    grid-area: n;
+    background-color: white;
+    grid-template-columns: 4fr 1fr;
+}
+
+#text{
+    display: grid;
+    align-content: center;
+    padding-left: 5%;
+    color: gray;
+    font-size: 50px;
+}
+
+#send{
+    display: grid;
+    background-color: blueviolet;
+    justify-content: center;
+    align-content: center;
+    color: white;
+}
