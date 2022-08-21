@@ -1,0 +1,57 @@
+#container{
+    display: grid;
+    position:relative;
+    margin: auto;
+    background-color: black;
+    border: 5px solid blueviolet;
+    border-radius: 20px;
+    border-color: blueviolet;
+    border-style:outset;
+    grid-template-rows: 5fr 1fr 3fr;
+    /* height: 50px; */
+    width: 50%;
+    grid-template-areas: 
+    "p"
+    "d"
+    "s";
+
+}
+img {
+    /* object-fit: cover; */
+    max-width: 8%;
+    max-height: 100%;
+    border-radius: 15px;
+}
+
+#lakers-logo{
+    display: grid;
+    justify-content: end;
+    /* align-self: flex-end; */
+}
+
+#picture{
+    display: grid;
+    background-image: url("https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2022%2F02%2Fkobe-bryant-inc-estate-metaverse-trademark-filing-info-1.jpg?q=90&w=1400&cbr=1&fit=max");
+    background-size:contain;
+    border-radius: 20px;
+    grid-area: p;
+    width: auto;
+    height: 555px;
+
+}
+
+#details{
+    grid-area: d;
+    background-image: url("https://img.freepik.com/free-vector/black-wallpaper-with-motion-lines-background_1017-30151.jpg");
+    border-radius: 20px;
+
+}
+
+#stats{
+    grid-area: s;
+    background-image: url("https://t4.ftcdn.net/jpg/02/62/27/45/240_F_262274583_fbVsQxJVRYLgkaQHrRoxNKpMdDYmhLJD.jpg");
+    border-radius: 10px;
+
+
+
+}
