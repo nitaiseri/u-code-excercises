@@ -26,7 +26,7 @@ img {
 #lakers-logo{
     display: grid;
     justify-content: end;
-    /* align-self: flex-end; */
+    align-self: flex-end;
 }
 
 #picture{
