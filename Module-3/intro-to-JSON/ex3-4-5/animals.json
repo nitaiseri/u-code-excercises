@@ -1,0 +1,72 @@
+[{
+    "name": "Squirrel",
+    "weight": {
+        "units": "kg",
+        "number": 10
+    },
+    "place": ["america", "austerlia"],
+    "endanger": false,
+    "food": [{
+        "name": "fruits",
+        "precentage": 35
+    }, {
+        "name": "nuts",
+        "precentage": 65
+    }],
+    "eaten by": ["carnivores", "Raptors"],
+    "delicious": 3
+},
+
+
+{
+    "name": "cow",
+    "weight": {
+        "units": "kg",
+        "number": 450
+    },
+    "place": ["africa", "america", "asia", "europe", "austerlia"],
+    "endanger": false,
+    "food": [{
+        "name": "weeds",
+        "precentage": 50
+    }, {
+        "name": "grass",
+        "precentage": 50
+    }],
+    "eaten by": ["lion", "tiger", "crocodiles"],
+    "delicious": 4
+},
+
+{
+    "name": "Gray wolf",
+    "weight": {
+        "units": "kg",
+        "number": 60
+    },
+    "place": ["america", "asia"],
+    "endanger": false,
+    "food": [{
+        "name": "mammals",
+        "precentage": 100
+    }],
+    "eaten by": [],
+    "delicious": 2
+},
+
+{
+    "name": "Elephant",
+    "weight": {
+        "units": "tone",
+        "number": 4
+    },
+    "place": ["africa", "asia"],
+    "endanger": true,
+    "food": [{
+        "name": "fruits",
+        "precentage": 100
+    }],
+    "eaten by": ["lion"],
+    "delicious": 1
+}]
+
+
