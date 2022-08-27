@@ -1,0 +1,35 @@
+#red-container {
+    background-color: red;
+    width: 400px;
+    height:250px;
+    border-radius: 5%;
+    position: relative;
+    bottom: 10px;
+    margin: 20px;
+  }
+  
+  .grey {
+    display: inline-block;
+    background-color: grey;
+    height: 85px;
+    width: 85px;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    border: 2px solid grey;
+  }
+  
+  #right-grey {
+    position: absolute;
+    right: 0;
+  }
+  
+  #white {
+    width: 230px;
+    height: 190px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 85px;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }

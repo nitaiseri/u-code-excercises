@@ -1,0 +1,61 @@
+
+
+
+#container{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(155, 89, 182);
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+
+}
+
+#money{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    margin: 0%;
+}
+
+#time{
+    position: absolute;
+    display: inline-block;
+    bottom: 5px;
+    right: 10px;
+    margin: 0%;
+}
+
+.chart{
+    position: absolute;
+    width: 30px;
+    background-color: aliceblue;
+    bottom: 5px;
+    margin: 2px;
+}
+
+#chart1{
+    height: 30px;
+    left: 5px;
+}
+#chart2{
+    height: 100px;
+    left: 55px;
+}
+#chart3{
+    height: 150px;
+    left: 105px;
+}
+#chart4{
+    height: 130px;
+    left: 155px;
+}
+#chart5{
+    height: 110px;
+    left: 205px;
+}
+#chart6{
+    height: 70px;
+    left: 255px;
+}
+
