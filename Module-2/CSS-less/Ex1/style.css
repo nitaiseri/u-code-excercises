@@ -1,0 +1,44 @@
+#outer-container {
+  display: grid;
+  background-color: beige;
+  width: 350px;
+  height: 500px;
+  padding: 5px;
+  border-radius: 10px;
+  grid-template-rows: 5fr 4fr;
+  grid-template-areas: "l" "o";
+}
+#login {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: red;
+  grid-area: l;
+}
+#login #head-line {
+  align-self: center;
+  color: white;
+  text-align: center;
+  margin: 20px;
+  font-size: x-large;
+  font-family: 'Segoe UI';
+}
+#login input {
+  display: block;
+  align-self: center;
+  color: white;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+#login #head-line {
+  align-self: center;
+  color: white;
+  grid-area: "head";
+}
+#open {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: brown;
+  grid-area: o;
+}
