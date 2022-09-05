@@ -1,0 +1,15 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.person{
+    display: inline-block;
+    background-color: grey;
+    padding: 20px;
+    margin: 5px;
+    border: solid blue;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+}

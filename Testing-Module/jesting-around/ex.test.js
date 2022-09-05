@@ -78,11 +78,12 @@ const functions = new Exercises();
 // Extention:
 
 test("Check whether Push function used in the function or not", () => {
-    const pushSpy = jest.spyOn(functions, 'add');
+    // const pushSpy = jest.spyOn(functions, 'add');
+    const pushSpy = jest.spyOn(Array.prototype, 'push');
+
     functions.add(1,2);
 
     expect(pushSpy).toHaveBeenCalled();
-
 
     expect(pushSpy.mock.calls.length).toBe(1);
 })
