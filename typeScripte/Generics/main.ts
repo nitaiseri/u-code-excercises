@@ -1,30 +1,30 @@
 // Ex 1:
 // type Type = string | string[] | number | number[];
 
-// function getNumber(num: string | number): number{
-//     if (typeof num === 'number'){
-//         return num;
-//     }else if (!isNaN(parseInt(num))){
-//         return Number(num);
-//     }
-//     return 0;
-// }
+function getNumber(num: string | number): number{
+    if (typeof num === 'number'){
+        return num;
+    }else if (!isNaN(parseInt(num))){
+        return Number(num);
+    }
+    return 0;
+}
 
-// function sum<Type>(arg: Type): number{
-//     let sum: number = 0;
-//     if ((typeof arg === 'number') || (typeof arg === 'string')){
-//         return getNumber(arg);
-//     }else if (Array.isArray(arg)){
-//         arg.forEach(num => sum += getNumber(num));
-//     }
-//     return sum;
-// }
+function sum<Type>(arg: Type): number{
+    let sum: number = 0;
+    if ((typeof arg === 'number') || (typeof arg === 'string')){
+        return getNumber(arg);
+    }else if (Array.isArray(arg)){
+        arg.forEach(num => sum += getNumber(num));
+    }
+    return sum;
+}
 
-// console.log(sum("23"));
-// console.log(sum("Tomer"));
-// console.log(sum(44));
-// console.log(sum(["test", 22, 55, "block", "9"]));
-// console.log(sum([23, 433, 11]));
+console.log(sum("23"));
+console.log(sum("Tomer"));
+console.log(sum(44));
+console.log(sum(["test", 22, 55, "block", "9"]));
+console.log(sum([23, 433, 11]));
 
 
 // Ex 2:
