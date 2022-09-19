@@ -72,6 +72,7 @@ class CircleIter:
         self.counter += 1
         return val
 
+
 for x in CircleIter([1,2],5):
   print(x, end=" ") 
 
