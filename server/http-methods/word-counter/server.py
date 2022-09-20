@@ -1,8 +1,10 @@
+from os import stat
 from fastapi import FastAPI
-from fastapi import Request, status
+from fastapi import Request, status, Response
 import uvicorn
 from word_counter import WordCounter
 from exceptions import *
+from json_patterns import *
 
 app = FastAPI()
 
@@ -18,24 +20,24 @@ def word_validity(word_json):
 
 @app.get('/')
 def root():
-    return {"message":"Server is up and running"}
+    return sanity_check()
 
 @app.get('/word_counter/')
 def get_count(word):
-    return {"count": word_counter.count(word)}
+    return count_pattern(word_counter.count(word))
 
-@app.post('/word_counter/word/')
-async def add_word(request: Request):
+@app.post('/word_counter/word/', status_code=status.HTTP_201_CREATED)
+async def add_word(request: Request, response: Response):
     new_word = await request.json()
     try:
         word_validity(new_word)
     except (JsonFormatError, WordError) as e:
-        
-        return {"error": str(e)}
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return error_pattern(str(e))
     count = word_counter.add_word(new_word["word"])
     return {"text": f'Added {new_word["word"]}', "currentCount": count }
 
-@app.post('/word_counter/sentence/')
+@app.post('/word_counter/sentence/', status_code=status.HTTP_201_CREATED)
 async def add_sentence(request: Request):
     new_sentence = await request.json()
     numNewWords, numOldWords = word_counter.add_sentence(new_sentence["sentence"])
