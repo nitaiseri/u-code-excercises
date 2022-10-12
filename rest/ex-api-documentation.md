@@ -643,7 +643,43 @@ Same exactly as adding. (all updates)
         ...
       ]
     ```
+    
+**Special Cases:**
+  Notice That when using Get request without specify an ID (either for an actor or movie) you will get all objects of that kind.
+  Otherwise you can use _limit_ and _page_ keyward to control the amount of data you want to get. 
 
+  Path: <_https://api.movie-actor.com/actors?limit=20&page=0_>
+
+  * **Success Response:**
+
+    * **Code:** 200 <br />
+        **header** total_pages: 18<br />
+        **Content:** Actor object (See example)
+ 
+  * **Error Response:**
+
+    * **Code:** 404 Not Found <br />
+        **Content-Type**: application/json
+        **Content:** 
+        ```json
+        {
+            "error": "Invalid num of page", 
+        }
+        ```
+
+  * **Example:**
+
+  ```json
+  Request:
+
+  **GET** https://api.movie-actor.com/actors?limit=20&page=0 HTTP/1.1
+
+  Respone:
+
+    HTTP/1.1 200 OK
+
+        List of the first 20 actors objects.
+  ```
 
 
 
