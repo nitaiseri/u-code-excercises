@@ -6,8 +6,8 @@ class Human{
     }
 }
 
-const h1 = new Human("Moshe", 25, true);
-console.log(`${h1.name} is ${h1.age} years old and is ${h1.isFriendly ? 'friendly' : 'not friendly'}`)
+// const h1 = new Human("Moshe", 25, true);
+// console.log(`${h1.name} is ${h1.age} years old and is ${h1.isFriendly ? 'friendly' : 'not friendly'}`)
 
 
 class Animal {
@@ -62,7 +62,7 @@ class Vehicle {
         console.log(`Made ${30000*Vehicle.carsSold} dollars`)
     }
 }
-Vehicle.carsSold = 0;
+// Vehicle.carsSold = 0;
 
 
 const c1 = new Vehicle(1, 1, 20, 151);
@@ -74,6 +74,7 @@ c.x = 3
 c.y = 1
 c.speed = -2 // at this point, we'll get the console log saying speed needs to be positive
 c1._fuel=10
+c1.fuel=1
 console.log(c1.fuel)
 
 
@@ -95,8 +96,8 @@ class Zoo {
 }
 
 
-const cat = new Animal("Puss", 4)
-const zoo = new Zoo()
+// const cat = new Animal("Puss", 4)
+// const zoo = new Zoo()
 
-zoo.addAnimal(cat) // prints "Added Puss to the zoo"
-zoo.showAnimals() // prints "Puss"
+// zoo.addAnimal(cat) // prints "Added Puss to the zoo"
+// zoo.showAnimals() // prints "Puss"
