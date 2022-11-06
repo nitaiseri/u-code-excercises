@@ -8,5 +8,5 @@ class AnimalActions(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def eat(self, food: Food):
+    def get_food(self) -> Food:
         pass
