@@ -45,6 +45,6 @@ def add_given_animals(my_zoo):
 if __name__ == "__main__":
     my_zoo = Zoo()    
     add_given_animals(my_zoo)
-    my_zoo.period_simulation(14)
+    my_zoo.period_simulation(12)
 
     
