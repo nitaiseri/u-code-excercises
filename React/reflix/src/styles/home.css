@@ -1,0 +1,9 @@
+.usersContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.homeContainer{
+    text-align: center;
+}
+

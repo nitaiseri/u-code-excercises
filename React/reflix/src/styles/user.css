@@ -1,0 +1,8 @@
+.userContainer{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    border-color: black;
+    margin: 2%;
+}
