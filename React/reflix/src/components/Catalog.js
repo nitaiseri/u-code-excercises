@@ -5,16 +5,34 @@ import { HiMinusCircle } from "react-icons/hi";
 
 
 class Catalog extends Component {
+    constructor() {
+        super();
+        this.state = {
+            textOfSearch: ""
+        }
+    }
+
+    handleInput = (text) => {
+        const inputValue = text.target.value.toLowerCase();
+        this.setState({
+            textOfSearch: inputValue
+        })
+    }
+
+    getFilterMovies = () => {
+        return this.props.movies.filter(m => m.title.toLowerCase().includes(this.state.textOfSearch));
+    }
 
     render() {
         const movies = this.props.movies;
+        const filteredMovies = this.getFilterMovies();
         const user = this.props.currentUser;
         const rentedMovies = movies.filter(m => m.isRented)
-        const notRentedMovie = movies.filter(m => !m.isRented)
+        const notRentedMovie = filteredMovies.filter(m => !m.isRented)
         return (
             <div className='catalogContainer'>{this.props.currentUser.name}
                 <div className='topper'>
-                    <input type="text" placeholder='Search'/>
+                    <input type="text" placeholder='Search' value={this.state.textOfSearch} onChange={this.handleInput}/>
                     <span>Badget: {user.badget}</span>
                 </div>
                 <Movies 
