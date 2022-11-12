@@ -8,10 +8,11 @@ class User extends Component {
     }
 
     render() {
+        const user = this.props.user;
         return (
             <div className="userContainer" onClick={this.changeUser}>
                 <Link to="/catalog">
-                    <h1>{this.props.user.name}</h1>
+                    <h1>{user.name}</h1>
                 </Link>
             </div>
 

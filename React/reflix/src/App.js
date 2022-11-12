@@ -27,9 +27,9 @@ class App extends Component {
     }
   }
 
-  changeCurrentUser = (user) => {
+  changeCurrentUser = (userId) => {
     this.setState({
-      currentUser: user
+      currentUser: userId
     })
   }
 
@@ -52,10 +52,10 @@ class App extends Component {
     return movies;
   }
 
-  createUpdatedUserAfterRent = (amountOfMoney) => {
+  createUpdatedUserAfterRent = (moviePrice) => {
     const users = [...this.state.users];
     const userIndex = users.findIndex((u => u.id === this.state.currentUser));
-    users[userIndex].badget += amountOfMoney;
+    users[userIndex].badget += moviePrice;
     return users;
   }
 
@@ -64,22 +64,22 @@ class App extends Component {
     const users = this.createUpdatedUserAfterRent(50);
 
     this.setState({
-      movies, 
+      movies,
       users
     })
   }
 
   rentMovie = (movieId) => {
-    if (this.currentUserCanAfford()){
+    if (this.currentUserCanAfford()) {
       const movies = this.createUpdatedMoviesAfterRent(movieId);
       const users = this.createUpdatedUserAfterRent(-50);
-  
+
       this.setState({
-        movies, 
+        movies,
         users
       })
     }
-    else{
+    else {
       alert("Sorry, you don't have enough money. Go to work!");
     }
   }
@@ -101,19 +101,21 @@ class App extends Component {
             <Link to="/">Home</Link>
             <Link to="/catalog">Catalog</Link>
           </div>
-          <Route path="/" exact component={() => <Home
-            users={state.users}
-            changeUser={this.changeCurrentUser} />} />
-          <Route path="/catalog" exact component={() => <Catalog
-            currentUser={this.getCurrentUser()}
-            movies={state.movies}
-            unRentMovie={this.unRentMovie}
-            rentMovie={this.rentMovie}
-            updateBadget={this.updateBadget} />} />
-          <Route path="/movies/:movie_id" exact render={({ match }) => <Movie
-            match={match}
-            getMovie={this.getMovieObject} />} />
-
+          <Route path="/" exact component={() =>
+            <Home
+              users={state.users}
+              changeUser={this.changeCurrentUser} />} />
+          <Route path="/catalog" exact component={() =>
+            <Catalog
+              currentUser={this.getCurrentUser()}
+              movies={state.movies}
+              unRentMovie={this.unRentMovie}
+              rentMovie={this.rentMovie}
+              updateBadget={this.updateBadget} />} />
+          <Route path="/movies/:movie_id" exact render={({ match }) =>
+            <Movie
+              match={match}
+              getMovie={this.getMovieObject} />} />
         </div>
       </Router>
     );

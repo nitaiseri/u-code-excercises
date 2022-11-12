@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Icon extends Component {
 
     onClickFunction = () => {
-        this.props.onClickFunc(this.props.movieId);
+        this.props.onClickIcon(this.props.movieId);
     }
 
     render() {

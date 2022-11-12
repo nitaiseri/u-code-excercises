@@ -32,18 +32,19 @@ class Catalog extends Component {
         return (
             <div className='catalogContainer'>{this.props.currentUser.name}
                 <div className='topper'>
-                    <input type="text" placeholder='Search' value={this.state.textOfSearch} onChange={this.handleInput}/>
+                    <input type="text" placeholder='Search' value={this.state.textOfSearch} onChange={this.handleInput} />
                     <span>Badget: {user.badget}</span>
                 </div>
-                <Movies 
+                <Movies
                     movies={rentedMovies}
                     header={"rented"}
                     icon={HiMinusCircle}
-                    onClickFunc={this.props.unRentMovie}/>
-                <Movies movies={notRentedMovie}
+                    onClickIcon={this.props.unRentMovie} />
+                <Movies
+                    movies={notRentedMovie}
                     header={"catalog"}
                     icon={BsPlusCircleFill}
-                    onClickFunc={this.props.rentMovie}/>
+                    onClickIcon={this.props.rentMovie} />
             </div>
         );
     }
