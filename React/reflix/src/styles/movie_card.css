@@ -2,7 +2,15 @@
     width: 20%;
     height: auto;
 }
+.card {
+    /* position: relative; */
+}
+
+.addButton{
+    /* position: absolute; */
+}
 
 .movieCard img{
     width: 100%;
+    /* position: absolute; */
 }

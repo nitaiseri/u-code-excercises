@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import '../styles/user.css'
 import {Link } from 'react-router-dom'
 
-
-
 class User extends Component {
     changeUser = () => {
         this.props.changeUser(this.props.user.id);

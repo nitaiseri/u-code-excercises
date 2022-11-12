@@ -9,7 +9,7 @@ class Movies extends Component {
             <div className='moviesContainer'>
                 <div>{this.props.header}:</div>
                 <div className='movies'>
-                    {this.props.movies.map(m => <MovieCard key={m.id} movie={m}/>)}
+                    {this.props.movies.map(m => <MovieCard key={m.id} movie={m} icon={this.props.icon} onClickFunc={this.props.onClickFunc}/>)}
                 </div>
             </div>
         );
