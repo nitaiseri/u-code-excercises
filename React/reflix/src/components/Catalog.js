@@ -17,8 +17,15 @@ class Catalog extends Component {
                     <input type="text" placeholder='Search'/>
                     <span>Badget: {user.badget}</span>
                 </div>
-                <Movies movies={rentedMovies} header={"rented"} icon={HiMinusCircle} onClickFunc={this.props.returnMovie}/>
-                <Movies movies={notRentedMovie} header={"catalog"} icon={BsPlusCircleFill} onClickFunc={this.props.rentMovie}/>
+                <Movies 
+                    movies={rentedMovies}
+                    header={"rented"}
+                    icon={HiMinusCircle}
+                    onClickFunc={this.props.unRentMovie}/>
+                <Movies movies={notRentedMovie}
+                    header={"catalog"}
+                    icon={BsPlusCircleFill}
+                    onClickFunc={this.props.rentMovie}/>
             </div>
         );
     }

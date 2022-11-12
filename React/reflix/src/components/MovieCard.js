@@ -15,7 +15,11 @@ class MovieCard extends Component {
                         <img src={this.props.movie.img} alt="" />
                     </div>
                 </Link>
-                <Icon icon={this.props.icon} movieId={this.props.movie.id} onClickFunc={this.props.onClickFunc} className='addButton' />
+                <Icon 
+                    icon={this.props.icon}
+                    movieId={this.props.movie.id}
+                    onClickFunc={this.props.onClickFunc}
+                    className='addButton' />
             </div>
         );
     }
