@@ -1,5 +1,26 @@
+#main-links {
+  margin-top: 5px;
+}
+
+#main-links > a{
+  margin: 10px;
+  color: rgb(233, 114, 134);
+}
+
+*{
+  text-decoration: none;
+  font-weight: bolder;
+  color: rgb(233, 114, 134);
+}
+
+a{
+  cursor: pointer;
+  color: black;
+}
+
+
 #home-background{
-  background-image: url(https://cdn.mos.cms.futurecdn.net/35af26903d70fb40e85933743adfb24d.jpg);
+  background-image: url(https://genheration.com/wp-content/uploads/2021/06/Popcorn-Banner.png);
   background-color: lightblue;
   height: 100%;
   width: 100%;

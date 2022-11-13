@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from "./components/Home"
 import Catalog from "./components/Catalog"
 import Movie from "./components/Movie"
+import { AiFillHome } from "react-icons/ai";
+import { MdLocalMovies } from "react-icons/md";
 
 class App extends Component {
 
@@ -18,10 +20,10 @@ class App extends Component {
         { id: 4, isRented: false, title: "Beauty and the Beast", year: 2016, img: "https://images-na.ssl-images-amazon.com/images/I/51ArFYSFGJL.jpg", descrShort: "Basically the same as the original, except now Hermi-- Emma Wattson plays Belle, fittingly so some would say, given how actively progressive she is regarding women's rights. Rumor has it that in the bonus scenes she whips out a wand and turns Gaston into a toad, but in order to watch those scenes you need to recite a certain incantation." }
       ],
       users: [
-        { id: 0, name: "Elik", badget: 100 },
-        { id: 1, name: "Belik", badget: 100 },
-        { id: 2, name: "Bom", badget: 100 },
-        { id: 3, name: "Hameleh", badget: 100 }
+        { id: 0, name: "Belle", badget: 100 , picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_belle_upcportalreskin_20694_e5816813.jpeg?region=0,0,330,330"},
+        { id: 1, name: "Mulan", badget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_mulan_upcportalreskin_20694_78e0045d.jpeg?region=0,0,330,330"},
+        { id: 2, name: "Rapunzel", badget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_rapunzel_upcportalreskin_20694_01be5a18.jpeg?region=0,0,330,330" },
+        { id: 3, name: "Ariel", badget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_ariel_upcportalreskin_20694_09abefbe.jpeg?region=0,0,330,330" }
       ],
       currentUser: null
     }
@@ -92,26 +94,32 @@ class App extends Component {
 
   render() {
     const state = this.state
-
+    // let ConditionalCatalogLink = this.state.currentUser !== null ? Link : React.DOM.div;
     return (
       <Router>
         <div className="App">
           <div id="home-background"></div>
           <div id="main-links">
-            <Link to="/">Home</Link>
-            <Link to="/catalog">Catalog</Link>
+            <Link to="/"><AiFillHome /></Link>
+            <Link to="/catalog"><MdLocalMovies /></Link>
           </div>
           <Route path="/" exact component={() =>
             <Home
               users={state.users}
               changeUser={this.changeCurrentUser} />} />
           <Route path="/catalog" exact component={() =>
-            <Catalog
-              currentUser={this.getCurrentUser()}
-              movies={state.movies}
-              unRentMovie={this.unRentMovie}
-              rentMovie={this.rentMovie}
-              updateBadget={this.updateBadget} />} />
+            this.state.currentUser !== null ?
+              <Catalog
+                currentUser={this.getCurrentUser()}
+                movies={state.movies}
+                unRentMovie={this.unRentMovie}
+                rentMovie={this.rentMovie}
+                updateBadget={this.updateBadget} />
+              :
+              <Home
+                users={state.users}
+                changeUser={this.changeCurrentUser}
+                message={"Please connect to some user:"} />} />
           <Route path="/movies/:movie_id" exact render={({ match }) =>
             <Movie
               match={match}

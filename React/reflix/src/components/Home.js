@@ -10,7 +10,7 @@ class Home extends Component {
         const changeUser = this.props.changeUser;
         return (
             <div className='homeContainer'>
-                <h1>Select User:</h1>
+                <h1>{this.props.message? this.props.message: "WHO'S WATCHING?"}</h1>
                 <div className='usersContainer'>
                     {/* <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}> */}
                         {users.map(u => {return (

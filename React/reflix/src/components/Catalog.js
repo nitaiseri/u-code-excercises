@@ -24,9 +24,9 @@ class Catalog extends Component {
     }
 
     render() {
+        const user = this.props.currentUser;
         const movies = this.props.movies;
         const filteredMovies = this.getFilterMovies();
-        const user = this.props.currentUser;
         const rentedMovies = movies.filter(m => m.isRented)
         const notRentedMovie = filteredMovies.filter(m => !m.isRented)
         return (
