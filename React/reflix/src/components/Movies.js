@@ -5,11 +5,12 @@ import '../styles/movies.css'
 
 class Movies extends Component {
     render() {
+        const movies = this.props.movies;
         return (
             <div className='moviesContainer'>
-                <div>{this.props.header}:</div>
+                <h2>{this.props.header}:</h2>
                 <div className='movieCards'>
-                    {this.props.movies.map(m =>
+                    {movies.map(m =>
                         <MovieCard
                             key={m.id}
                             movie={m}

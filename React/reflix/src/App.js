@@ -6,6 +6,7 @@ import Catalog from "./components/Catalog"
 import Movie from "./components/Movie"
 import { AiFillHome } from "react-icons/ai";
 import { MdLocalMovies } from "react-icons/md";
+import {NO_BUDGET_MESSAGE} from "./consts"
 
 class App extends Component {
 
@@ -20,10 +21,10 @@ class App extends Component {
         { id: 4, isRented: false, title: "Beauty and the Beast", year: 2016, img: "https://images-na.ssl-images-amazon.com/images/I/51ArFYSFGJL.jpg", descrShort: "Basically the same as the original, except now Hermi-- Emma Wattson plays Belle, fittingly so some would say, given how actively progressive she is regarding women's rights. Rumor has it that in the bonus scenes she whips out a wand and turns Gaston into a toad, but in order to watch those scenes you need to recite a certain incantation." }
       ],
       users: [
-        { id: 0, name: "Belle", badget: 100 , picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_belle_upcportalreskin_20694_e5816813.jpeg?region=0,0,330,330"},
-        { id: 1, name: "Mulan", badget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_mulan_upcportalreskin_20694_78e0045d.jpeg?region=0,0,330,330"},
-        { id: 2, name: "Rapunzel", badget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_rapunzel_upcportalreskin_20694_01be5a18.jpeg?region=0,0,330,330" },
-        { id: 3, name: "Ariel", badget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_ariel_upcportalreskin_20694_09abefbe.jpeg?region=0,0,330,330" }
+        { id: 0, name: "Belle", budget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_belle_upcportalreskin_20694_e5816813.jpeg?region=0,0,330,330" },
+        { id: 1, name: "Mulan", budget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_mulan_upcportalreskin_20694_78e0045d.jpeg?region=0,0,330,330" },
+        { id: 2, name: "Rapunzel", budget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_rapunzel_upcportalreskin_20694_01be5a18.jpeg?region=0,0,330,330" },
+        { id: 3, name: "Ariel", budget: 100, picUrl: "https://lumiere-a.akamaihd.net/v1/images/ct_ariel_upcportalreskin_20694_09abefbe.jpeg?region=0,0,330,330" }
       ],
       currentUser: null
     }
@@ -57,7 +58,7 @@ class App extends Component {
   createUpdatedUserAfterRent = (moviePrice) => {
     const users = [...this.state.users];
     const userIndex = users.findIndex((u => u.id === this.state.currentUser));
-    users[userIndex].badget += moviePrice;
+    users[userIndex].budget += moviePrice;
     return users;
   }
 
@@ -82,25 +83,29 @@ class App extends Component {
       })
     }
     else {
-      alert("Sorry, you don't have enough money. Go to work!");
+      alert(NO_BUDGET_MESSAGE);
     }
   }
 
   currentUserCanAfford = () => {
     const user = this.getCurrentUser();
-    return user.badget >= 50;
+    return user.budget >= 50;
   }
 
+  logout = () => {
+    this.setState({
+      currentUser: null
+    })
+  }
 
   render() {
     const state = this.state
-    // let ConditionalCatalogLink = this.state.currentUser !== null ? Link : React.DOM.div;
     return (
       <Router>
         <div className="App">
           <div id="home-background"></div>
           <div id="main-links">
-            <Link to="/"><AiFillHome /></Link>
+            <Link to="/" onClick={this.logout}><AiFillHome /></Link>
             <Link to="/catalog"><MdLocalMovies /></Link>
           </div>
           <Route path="/" exact component={() =>
@@ -108,18 +113,13 @@ class App extends Component {
               users={state.users}
               changeUser={this.changeCurrentUser} />} />
           <Route path="/catalog" exact component={() =>
-            this.state.currentUser !== null ?
               <Catalog
                 currentUser={this.getCurrentUser()}
                 movies={state.movies}
                 unRentMovie={this.unRentMovie}
                 rentMovie={this.rentMovie}
                 updateBadget={this.updateBadget} />
-              :
-              <Home
-                users={state.users}
-                changeUser={this.changeCurrentUser}
-                message={"Please connect to some user:"} />} />
+                } />
           <Route path="/movies/:movie_id" exact render={({ match }) =>
             <Movie
               match={match}

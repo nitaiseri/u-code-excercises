@@ -11,11 +11,11 @@ class MovieCard extends Component {
         return (
             <div className='movieCard'>
                 {movie.title}
-                <Link to={`/movies/${movie.id}`}>
                     <div className='card'>
+                <Link to={`/movies/${movie.id}`}>
                         <img src={movie.img} alt="" />
-                    </div>
                 </Link>
+                    </div>
                 <Icon 
                     icon={this.props.icon}
                     movieId={movie.id}

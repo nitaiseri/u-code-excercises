@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Movies from './Movies'
 import { BsPlusCircleFill } from "react-icons/bs";
 import { HiMinusCircle } from "react-icons/hi";
+import '../styles/catalog.css'
+import {CONNECT_FIRST_MESSAGE, SEARCH_TEXT, RENT_HEADER, CATALOG_HEADER} from "../consts"
 
 
 class Catalog extends Component {
@@ -25,24 +27,36 @@ class Catalog extends Component {
 
     render() {
         const user = this.props.currentUser;
+        if (user === null) {
+            return (
+                <div className='catalogContainer'>
+                    <h1>
+                        {CONNECT_FIRST_MESSAGE}
+                    </h1>
+                </div>
+            )
+        }
         const movies = this.props.movies;
         const filteredMovies = this.getFilterMovies();
         const rentedMovies = movies.filter(m => m.isRented)
         const notRentedMovie = filteredMovies.filter(m => !m.isRented)
         return (
-            <div className='catalogContainer'>{this.props.currentUser.name}
-                <div className='topper'>
-                    <input type="text" placeholder='Search' value={this.state.textOfSearch} onChange={this.handleInput} />
-                    <span>Badget: {user.badget}</span>
+            <div className='catalogContainer'>
+                <h1>
+                    {`WELCOME ${this.props.currentUser.name}`}
+                </h1>
+                <h2>Your budget: {user.budget}$</h2>
+                <div className='header'>
+                    <input type="text" placeholder={SEARCH_TEXT} value={this.state.textOfSearch} onChange={this.handleInput} />
                 </div>
                 <Movies
                     movies={rentedMovies}
-                    header={"rented"}
+                    header={RENT_HEADER}
                     icon={HiMinusCircle}
                     onClickIcon={this.props.unRentMovie} />
                 <Movies
                     movies={notRentedMovie}
-                    header={"catalog"}
+                    header={CATALOG_HEADER}
                     icon={BsPlusCircleFill}
                     onClickIcon={this.props.rentMovie} />
             </div>

@@ -1,17 +1,16 @@
-:root {
-    --cardWidth: 200px;
-    --cardHeight: 200px;
-    --cardMargin: 16px;
-  }
 
 .userCard {
-    width: var(--cardWidth);
-    height: var(--cardHeight);
+    width: 200px;
+    height: 200px;
     margin: var(--cardMargin);
     border: 1px solid #ccc;
     border-radius: 8px;
     background: transparent;
     box-sizing: border-box;
+}
+
+.userCard :hover{
+    transform: scale(1.1);
 }
 
 .userContainer{
@@ -22,7 +21,7 @@
     flex-direction: column;
 }
 
-img{
+.userCard img{
     max-width: 100%;
     max-height: 100%;
     border-radius: 8px;

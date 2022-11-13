@@ -1,0 +1,16 @@
+.catalogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header input{
+    background-color: lightpink;
+    border-radius: 2px;
+}
+
+.catalogContainer h2{
+margin: 5px;
+
+}

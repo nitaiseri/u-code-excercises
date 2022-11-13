@@ -10,7 +10,7 @@
 *{
   text-decoration: none;
   font-weight: bolder;
-  color: rgb(233, 114, 134);
+  color: rgb(126, 50, 88);
 }
 
 a{
@@ -20,16 +20,20 @@ a{
 
 
 #home-background{
-  background-image: url(https://genheration.com/wp-content/uploads/2021/06/Popcorn-Banner.png);
-  background-color: lightblue;
+  background-image: url(https://thumbs.dreamstime.com/b/popcorn-movie-clip-pink-background-top-view-copy-space-fresh-popcorn-movie-clip-pink-background-top-view-copy-space-113592468.jpg);
+  background-size:     cover;                 
+  background-repeat:   no-repeat;
+  background-position: center ;
+  min-height: 100%;
   height: 100%;
   width: 100%;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   opacity: 0.6;
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: -1;
-}
+} 
